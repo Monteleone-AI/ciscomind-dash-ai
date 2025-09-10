@@ -19,6 +19,15 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        /* DISC Color System */
+        disc: {
+          d: "hsl(var(--disc-d))",
+          i: "hsl(var(--disc-i))",
+          s: "hsl(var(--disc-s))",
+          c: "hsl(var(--disc-c))",
+        },
+        
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -52,6 +61,7 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          glass: "hsl(var(--card-glass))",
         },
         success: {
           DEFAULT: "hsl(var(--success))",
@@ -75,14 +85,23 @@ export default {
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-secondary': 'var(--gradient-secondary)',
-        'gradient-wellness': 'var(--gradient-wellness)',
-        'gradient-calm': 'var(--gradient-calm)',
+        'gradient-disc-d': 'var(--gradient-disc-d)',
+        'gradient-disc-i': 'var(--gradient-disc-i)',
+        'gradient-disc-s': 'var(--gradient-disc-s)',
+        'gradient-disc-c': 'var(--gradient-disc-c)',
+        'gradient-glass': 'var(--gradient-glass)',
+        'gradient-neural': 'var(--gradient-neural)',
       },
       boxShadow: {
         'soft': 'var(--shadow-soft)',
         'medium': 'var(--shadow-medium)',
         'large': 'var(--shadow-large)',
         'glow': 'var(--shadow-glow)',
+        'disc-d': 'var(--shadow-disc-d)',
+        'disc-i': 'var(--shadow-disc-i)',
+        'disc-s': 'var(--shadow-disc-s)',
+        'disc-c': 'var(--shadow-disc-c)',
+        'neural': 'var(--shadow-neural)',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -91,6 +110,14 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        'hero': ['var(--font-hero)', { lineHeight: '1.1', fontWeight: '800' }],
+        'card-title': ['var(--font-card-title)', { lineHeight: '1.3', fontWeight: '700' }],
+      },
+      backdropBlur: {
+        'xs': '2px',
+        'glass': 'var(--glass-blur)',
       },
       keyframes: {
         "accordion-down": {

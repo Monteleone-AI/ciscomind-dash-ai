@@ -2,155 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CiscoMind Design System - Mental Health Platform
+/* CiscoMind Design System - Premium Dark Mode with DISC Palette
 All colors MUST be HSL for proper theming.
 */
 
 @layer base {
   :root {
-    /* Background & Surface Colors */
-    --background: 220 15% 98%;
-    --foreground: 215 25% 27%;
+    /* Premium Dark Background */
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
 
-    /* Card & Popover Colors */
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    /* Glass Card System */
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --card-glass: 0 0% 15% / 0.3;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Primary Colors - Calming Blue */
+    /* DISC Color Palette */
+    --disc-d: 0 84% 60%;          /* Dominance - Red */
+    --disc-i: 38 92% 50%;         /* Influence - Yellow */
+    --disc-s: 142 71% 45%;        /* Steadiness - Green */
+    --disc-c: 217 91% 60%;        /* Compliance - Blue */
+    
+    /* Primary System (DISC Blue) */
     --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
     --primary-light: 217 91% 70%;
     --primary-dark: 217 91% 50%;
 
-    /* Secondary Colors - Therapeutic Green */
-    --secondary: 160 60% 52%;
+    /* Secondary System (DISC Green) */
+    --secondary: 142 71% 45%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 160 60% 62%;
-    --secondary-dark: 160 60% 42%;
+    --secondary-light: 142 71% 55%;
+    --secondary-dark: 142 71% 35%;
 
-    /* Accent Colors - Gentle Lavender */
-    --accent: 267 84% 81%;
-    --accent-foreground: 215 25% 27%;
-    --accent-light: 267 84% 88%;
-    --accent-dark: 267 84% 74%;
+    /* Accent System (Neural Purple) */
+    --accent: 267 84% 65%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 267 84% 75%;
+    --accent-dark: 267 84% 55%;
 
     /* Muted & Neutral Colors */
-    --muted: 220 13% 95%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
     
-    /* Success & Wellness Colors */
+    /* Status Colors (DISC Based) */
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
     
-    /* Warning & Attention Colors */
     --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 100%;
+    --warning-foreground: 0 0% 10%;
     
-    /* Destructive Colors */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     /* Border & Input Colors */
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    --border: 0 0% 20%;
+    --input: 0 0% 12%;
     --ring: 217 91% 60%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(160 60% 52%));
-    --gradient-secondary: linear-gradient(135deg, hsl(160 60% 52%), hsl(267 84% 81%));
-    --gradient-wellness: linear-gradient(135deg, hsl(217 91% 70%), hsl(160 60% 62%));
-    --gradient-calm: linear-gradient(180deg, hsl(220 15% 98%), hsl(220 13% 95%));
+    /* Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60% / 0.9), hsl(267 84% 65% / 0.7));
+    --gradient-secondary: linear-gradient(135deg, hsl(142 71% 45% / 0.9), hsl(217 91% 60% / 0.7));
+    --gradient-disc-d: linear-gradient(135deg, hsl(0 84% 60% / 0.9), hsl(0 84% 70% / 0.7));
+    --gradient-disc-i: linear-gradient(135deg, hsl(38 92% 50% / 0.9), hsl(38 92% 60% / 0.7));
+    --gradient-disc-s: linear-gradient(135deg, hsl(142 71% 45% / 0.9), hsl(142 71% 55% / 0.7));
+    --gradient-disc-c: linear-gradient(135deg, hsl(217 91% 60% / 0.9), hsl(217 91% 70% / 0.7));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 15% / 0.3), hsl(0 0% 25% / 0.1));
+    --gradient-neural: linear-gradient(135deg, hsl(267 84% 65% / 0.2), hsl(217 91% 60% / 0.3));
 
-    /* Shadows */
-    --shadow-soft: 0 1px 3px hsl(215 25% 27% / 0.1), 0 1px 2px hsl(215 25% 27% / 0.06);
-    --shadow-medium: 0 4px 6px -1px hsl(215 25% 27% / 0.1), 0 2px 4px -1px hsl(215 25% 27% / 0.06);
-    --shadow-large: 0 10px 15px -3px hsl(215 25% 27% / 0.1), 0 4px 6px -2px hsl(215 25% 27% / 0.05);
-    --shadow-glow: 0 0 20px hsl(217 91% 60% / 0.3);
+    /* Neural Glow Shadows */
+    --shadow-soft: 0 1px 3px hsl(0 0% 0% / 0.3), 0 1px 2px hsl(0 0% 0% / 0.2);
+    --shadow-medium: 0 4px 12px hsl(0 0% 0% / 0.4), 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-large: 0 10px 25px hsl(0 0% 0% / 0.5), 0 4px 15px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 30px hsl(217 91% 60% / 0.4), 0 0 60px hsl(217 91% 60% / 0.2);
+    --shadow-disc-d: 0 0 20px hsl(0 84% 60% / 0.3);
+    --shadow-disc-i: 0 0 20px hsl(38 92% 50% / 0.3);
+    --shadow-disc-s: 0 0 20px hsl(142 71% 45% / 0.3);
+    --shadow-disc-c: 0 0 20px hsl(217 91% 60% / 0.3);
+    --shadow-neural: 0 0 40px hsl(267 84% 65% / 0.3);
+
+    /* Glassmorphism */
+    --glass-bg: 0 0% 15% / 0.1;
+    --glass-border: 0 0% 30% / 0.2;
+    --glass-blur: blur(20px);
+    --glass-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+
+    /* Typography Scale */
+    --font-hero: 4rem;
+    --font-card-title: 1.5rem;
+    --font-body: 1rem;
+    --font-small: 0.875rem;
 
     /* Spacing & Layout */
-    --radius: 0.75rem;
+    --radius: 1rem;
+    --radius-large: 1.5rem;
 
     /* Sidebar Colors */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 8% / 0.6;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15% / 0.5;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 20% / 0.3;
+    --sidebar-ring: 217 91% 60%;
 
     /* Animations & Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .dark {
-    /* Background & Surface Colors */
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-
-    /* Card & Popover Colors */
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-    --popover: 224 71% 4%;
-    --popover-foreground: 213 31% 91%;
-
-    /* Primary Colors - Calming Blue (Dark Mode) */
-    --primary: 217 91% 70%;
-    --primary-foreground: 224 71% 4%;
-    --primary-light: 217 91% 80%;
-    --primary-dark: 217 91% 60%;
-
-    /* Secondary Colors - Therapeutic Green (Dark Mode) */
-    --secondary: 160 60% 62%;
-    --secondary-foreground: 224 71% 4%;
-    --secondary-light: 160 60% 72%;
-    --secondary-dark: 160 60% 52%;
-
-    /* Accent Colors - Gentle Lavender (Dark Mode) */
-    --accent: 267 84% 91%;
-    --accent-foreground: 224 71% 4%;
-    --accent-light: 267 84% 95%;
-    --accent-dark: 267 84% 87%;
-
-    /* Muted & Neutral Colors */
-    --muted: 215 28% 17%;
-    --muted-foreground: 217 11% 65%;
-    
-    /* Success & Wellness Colors */
-    --success: 142 71% 55%;
-    --success-foreground: 224 71% 4%;
-    
-    /* Warning & Attention Colors */
-    --warning: 38 92% 60%;
-    --warning-foreground: 224 71% 4%;
-    
-    /* Destructive Colors */
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 213 31% 91%;
-
-    /* Border & Input Colors */
-    --border: 215 28% 17%;
-    --input: 215 28% 17%;
-    --ring: 217 91% 70%;
-
-    /* Gradients - Dark Mode */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 70%), hsl(160 60% 62%));
-    --gradient-secondary: linear-gradient(135deg, hsl(160 60% 62%), hsl(267 84% 91%));
-    --gradient-wellness: linear-gradient(135deg, hsl(217 91% 80%), hsl(160 60% 72%));
-    --gradient-calm: linear-gradient(180deg, hsl(224 71% 4%), hsl(215 28% 17%));
-
-    /* Sidebar Colors - Dark Mode */
-    --sidebar-background: 224 71% 4%;
-    --sidebar-foreground: 213 31% 91%;
-    --sidebar-primary: 217 91% 70%;
-    --sidebar-primary-foreground: 224 71% 4%;
-    --sidebar-accent: 215 28% 17%;
-    --sidebar-accent-foreground: 213 31% 91%;
-    --sidebar-border: 215 28% 17%;
-    --sidebar-ring: 217 91% 70%;
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glass: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-neural: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   }
 }
 
@@ -161,5 +123,38 @@ All colors MUST be HSL for proper theming.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Components */
+  .glass-card {
+    @apply bg-card-glass/40 backdrop-blur-glass border border-border/30 shadow-medium;
+    background-image: var(--glass-noise);
+  }
+  
+  .glass-button {
+    @apply bg-gradient-glass backdrop-blur-sm border border-border/20 hover:bg-gradient-neural transition-all duration-300;
+  }
+  
+  .neural-glow {
+    @apply shadow-neural hover:shadow-neural;
+  }
+
+  /* Premium Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gradient-primary rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-gradient-neural;
   }
 }
